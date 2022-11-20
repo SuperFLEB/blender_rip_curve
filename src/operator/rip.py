@@ -27,6 +27,10 @@ class RipOperator(Operator):
         active_points = get_active_points()
         active_points_ct = len(active_points)
 
+        # This can occur if they selected the left or right control point. I _should_ handle this case, but I'm not yet.
+        if active_points_ct == 0:
+            return "No points selected. Select the center control point of a single point."
+
         # I am lazy and this is full of operator calls that mess with the selection, so it's only supporting a
         # single point for now.
         if active_points_ct > 1:
