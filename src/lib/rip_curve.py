@@ -3,7 +3,7 @@ from bpy.types import Object, Spline, SplinePoint, BezierSplinePoint
 from typing import Iterable, Sized
 
 def get_selected_spline(obj: Object):
-    """Return the first selected Bezier spline, or None if none is selected"""
+    """Return the first selected spline, or None if none is selected"""
     for spline in obj.data.splines:
         points = get_points_collection(spline)
         attr = 'select_control_point' if spline.type == "BEZIER" else 'select'

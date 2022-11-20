@@ -12,15 +12,15 @@ _LOADED = True
 package_name = __package__
 
 bl_info = {
-    "name": "Rip Bezier Curve",
-    "description": "Rip a Bezier Curve (split it in two at the selected vertex)",
+    "name": "Rip Curve",
+    "description": "Rip a Bezier or Polygonal Curve (split it in two at the selected vertex)",
     "author": "FLEB (a.k.a. SuperFLEB)",
     "version": (0, 1, 0),
     "blender": (3, 1, 0),
     "location": "View3D > Object",
     "warning": "",  # used for warning icon and text in addons panel
-    "doc_url": "https://github.com/SuperFLEB/blender_rip_bezier_curve",
-    "tracker_url": "https://github.com/SuperFLEB/blender_rip_bezier_curve/issues",
+    "doc_url": "https://github.com/SuperFLEB/blender_rip_curve",
+    "tracker_url": "https://github.com/SuperFLEB/blender_rip_curve/issues",
     "support": "COMMUNITY",
     "category": "3D View",
 }
@@ -40,7 +40,7 @@ def menuitem(cls: bpy.types.Operator | bpy.types.Menu, operator_context: str = "
             self.layout.menu(cls.bl_idname)
 
         return submenu_fn
-    raise Exception(f"Rip Bezier Curve: Unknown menu type for menu {cls}. The developer screwed up.")
+    raise Exception(f"Rip Curve: Unknown menu type for menu {cls}. The developer screwed up.")
 
 
 # Registerable modules have a REGISTER_CLASSES list that lists all registerable classes in the module
@@ -77,7 +77,7 @@ def register() -> None:
         except RuntimeError:
             pass
         bpy.utils.register_class(c)
-        print("Rip Bezier Curve registered class:", c)
+        print("Rip Curve registered class:", c)
     for m in menus:
         getattr(bpy.types, m[0]).append(m[1])
 

@@ -17,9 +17,9 @@ split_on_point = rip_curve.split_on_point
 
 
 class RipOperator(Operator):
-    """Rip a Bezier Curve (split it in two at the selected vertex)"""
-    bl_idname = "rip_bezier_curve.rip"
-    bl_label = "Rip Bezier Curve"
+    """Rip a Curve (split it in two at the selected vertex)"""
+    bl_idname = "rip_curve.rip"
+    bl_label = "Rip Curve"
     bl_options = {'REGISTER', 'UNDO'}
 
     @classmethod
