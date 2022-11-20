@@ -15,7 +15,7 @@ bl_info = {
     "name": "Rip Curve",
     "description": "Rip a Bezier or Polygonal Curve (split it in two at the selected vertex)",
     "author": "FLEB (a.k.a. SuperFLEB)",
-    "version": (0, 1, 0),
+    "version": (0, 1, 2),
     "blender": (3, 1, 0),
     "location": "View3D > Object",
     "warning": "",  # used for warning icon and text in addons panel

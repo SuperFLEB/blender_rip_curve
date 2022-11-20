@@ -2,7 +2,8 @@ import bpy
 from bpy.types import Object, Spline, SplinePoint, BezierSplinePoint
 from typing import Iterable, Sized
 
-def get_selected_spline(obj: Object):
+
+def get_selected_spline(obj: Object) -> Spline:
     """Return the first selected spline, or None if none is selected"""
     for spline in obj.data.splines:
         points = get_points_collection(spline)
@@ -42,7 +43,8 @@ def get_selected_points_info() -> list[tuple[Object, Spline, SplinePoint | Bezie
                 print("Unsupported spline type", spl)
                 continue
             all_points = get_points_collection(spl)
-            sel_props = ["select_control_point", "select_left_handle", "select_right_handle"] if spl.type == "BEZIER" else ["select"]
+            sel_props = ["select_control_point", "select_left_handle",
+                         "select_right_handle"] if spl.type == "BEZIER" else ["select"]
             tuples.extend([(ob, spl, pt) for pt in all_points if is_sel(pt)])
     return tuples
 
@@ -53,7 +55,8 @@ def get_points_collection(spline: Spline) -> list[SplinePoint | BezierSplinePoin
         return list(spline.bezier_points)
     return list(spline.points)
 
-def select_points(spline: Spline, indices: Iterable[int] = ()):
+
+def select_points(spline: Spline, indices: Iterable[int] = ()) -> None:
     sel_props = {
         "BEZIER": "select_control_point",
         "POLY": "select"
@@ -70,7 +73,7 @@ def select_points(spline: Spline, indices: Iterable[int] = ()):
         setattr(coll[idx], sel_prop, True)
 
 
-def split_on_point(obj: Object, spline: Spline, point: SplinePoint | BezierSplinePoint):
+def split_on_point(obj: Object, spline: Spline, point: SplinePoint | BezierSplinePoint) -> None:
     """Split the given obj's given spline on the given point. Changes the selection to the split point."""
     points = spline.points if spline.points else spline.bezier_points
     split_index = [idx for idx, pt in enumerate(points) if pt == point][0]

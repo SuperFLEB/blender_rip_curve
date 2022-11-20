@@ -20,8 +20,8 @@ toss_ins = ["demo", "README", "README.md", "LICENSE",
             "COPYING"]  # Toss these files in from the super-root directory, too.
 exclude_regexes = [r"__pycache__", r"^venv", r"\.gitignore", r"^\.idea",
                    r".blend1$"]  # Exclude anything that matches these
-wrap_dir = "rip_bezier_curve"  # Wrap the output in a directory in the ZIP file
-output_file = f"rip_bezier_curve_{tag_name}.zip"  # What to call the ZIP file
+wrap_dir = "rip_curve"  # Wrap the output in a directory in the ZIP file
+output_file = f"rip_curve_{tag_name}.zip"  # What to call the ZIP file
 
 # EXECUTION
 home = str(Path(__file__).parents[0])
