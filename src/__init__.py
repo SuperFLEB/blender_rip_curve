@@ -16,7 +16,7 @@ bl_info = {
     "description": "Rip a Bezier Curve (split it in two at the selected vertex)",
     "author": "FLEB (a.k.a. SuperFLEB)",
     "version": (0, 1, 0),
-    "blender": (3, 0, 0),
+    "blender": (3, 1, 0),
     "location": "View3D > Object",
     "warning": "",  # used for warning icon and text in addons panel
     "doc_url": "https://github.com/SuperFLEB/blender_rip_bezier_curve",
