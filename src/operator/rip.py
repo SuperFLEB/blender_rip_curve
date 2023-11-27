@@ -16,7 +16,7 @@ get_selected_points_info = rip_curve.get_selected_points_info
 split_on_point = rip_curve.split_on_point
 
 
-class RipOperator(Operator):
+class RIP_CURVE_OT_Rip(Operator):
     """Rip a Curve (split it in two at the selected vertex)"""
     bl_idname = "rip_curve.rip"
     bl_label = "Rip Curve"
@@ -69,4 +69,4 @@ class RipOperator(Operator):
         return {'FINISHED'}
 
 
-REGISTER_CLASSES = [RipOperator]
+REGISTER_CLASSES = [RIP_CURVE_OT_Rip]

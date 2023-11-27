@@ -1,5 +1,7 @@
 # "Rip Curve" Blender Addon
 
+![](docs_support/rip_curve_banner.png)
+
 https://github.com/SuperFLEB/blender_rip_curve
 
 This Blender addon adds an action to the Curve Edit Mode Point Delete ("X") menu to "rip"

@@ -15,8 +15,8 @@ bl_info = {
     "name": "Rip Curve",
     "description": "Rip a Bezier or Polygonal Curve (split it in two at the selected vertex)",
     "author": "FLEB (a.k.a. SuperFLEB)",
-    "version": (0, 1, 2),
-    "blender": (3, 1, 0),
+    "version": (0, 1, 3),
+    "blender": (3, 4, 0),
     "location": "View3D > Object",
     "warning": "",  # used for warning icon and text in addons panel
     "doc_url": "https://github.com/SuperFLEB/blender_rip_curve",
@@ -24,8 +24,6 @@ bl_info = {
     "support": "COMMUNITY",
     "category": "3D View",
 }
-
-RipOperator = rip.RipOperator
 
 
 def menuitem(cls: bpy.types.Operator | bpy.types.Menu, operator_context: str = "EXEC_DEFAULT") -> Callable:
@@ -52,7 +50,7 @@ classes = []
 
 menus = [
     # Curve edit mode "X" menu
-    ["VIEW3D_MT_edit_curve_delete", menuitem(RipOperator)],
+    ["VIEW3D_MT_edit_curve_delete", menuitem(rip.RIP_CURVE_OT_Rip)],
 ]
 
 
